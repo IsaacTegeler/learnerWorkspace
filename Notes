@@ -1,0 +1,1 @@
+adding the validation data generator seems to help it improve when the loss is worse that the previouse epoch, but the network is still not converging very quickly. small number of variables in each epoch is bad. adjusting the learning rate did not speed convergence
