@@ -7,6 +7,7 @@ from keras.callbacks import Callback as c
 K.set_image_dim_ordering('th')
 
 '''
+this pulls the loss for each batch into an array 
 class LossHistory(c):
     def on_train_begin(self, logs={}):
         self.losses = []
@@ -17,7 +18,7 @@ class LossHistory(c):
 
 
 #-----------------pre building for size, shape, and defined constants------------------------------
-img_width, img_height = 300, 300
+img_width, img_height = 150, 150
 count = 1
 lossChange = 0.01
 bestLossIndex = 0
@@ -66,7 +67,7 @@ validation_generator = train_datagen.flow_from_directory('data/validation',
 '''
 history = LossHistory()
 
-#this function controles how the learning rate is updated
+#this function controles how the learning rate is updated, taken care of with rmsprop so not needed
 def scheduler(epoch):
 	global count
 	global bestLossIndex
