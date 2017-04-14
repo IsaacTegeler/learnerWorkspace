@@ -1,0 +1,56 @@
+<Doctype! html>
+<html>
+<Title> Using Keras </Title>
+
+<div  style="width:800px;">
+<H1><center>Keras and Machine Learing</center></H1>
+<br>
+<br>
+<p>Tutorias used: <br>
+<center><a href="https://blog.keras.io/how-convolutional-neural-networks-see-the-world.html"> Visualizing Layers</a><br>
+	 <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">Image augmentation</a></center> 
+<br>
+	 
+<body>
+<div>
+<H3> Key Terms </H3>
+<ul>
+	<li><b>Epoch</b> - one pass through the training data set followed by testing on validation data, should be set as the size of you dataset </li>
+	<br>
+	<li><b>Batch</b> - the number of samples from training set to train network (forward pass and backpropigation) the larger this number the more memory taken by the system. The GPU only has so much space, and I found that making this too large causes memory shortage problems. 		Increasing batch size increases the speed at which the network is trained.<span style="color:red"> Start with</span> a batch size of arround 100. And make the batches a multiple of the number of traing images you have.</li>
+	<br>
+	<li><b>Input shape</b> this is the dimensions of your input image. Images are pulled in by keras's image handeler as rgb images so they have a depth of 3.
+</ul>
+</div>
+<br>
+<div>
+	<H3 id="input shape"> Input Dimensions </H3>
+	<p>In keras there are two types of input shapes that can be used when creating a network. The batch input shape, and the normal input shape. These are multidimensional arrays that hold the shape of the incoming data that the network should handle, in this case images. In keras running a tensor flow backened I had to change the default dimenson ordering to the dimenson ordering used for thaneo. To set this the following 2 lines of code are needed:
+		<br>
+		<center style="font-family:courier;">from keras import backend as K</center>
+		<br>
+		<center style="font-family:courier;">K.set_image_dim_ordering('th')</center>
+<br>
+	then the input shape should be set as (batch_size, depth, width, height),
+<br>
+	and the convolution layers as (num of filters, window_width, window height)
+	</p>
+</div>
+<br>
+<div>
+	<H3>Creating a simple classifyer</H3>
+	<p>Here is a link to the code <a href="https://github.com/IsaacIsOkay/learnerWorkspace/blob/master/dogsAndCats.py">link</a> this creates a simple bianary classifier. That classifies between cat and dog images 
+</div>
+<div>
+	flow from directory and fit generator
+</div>
+<div>
+	image augmentation:
+</div>
+<div>
+	seeing what the network sees
+</div>
+
+</body>
+</div>
+</html>
