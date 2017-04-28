@@ -13,6 +13,8 @@
 </p>
 <p>Interesting Localization paper: <br>
 <center><a href="http://cnnlocalization.csail.mit.edu/Zhou_Learning_Deep_Features_CVPR_2016_paper.pdf" target="_blank">Deep Features for Discriminative Localization</a></center>
+</p>
+<p>E-mail: isaac.tegeler@gmail.com    <a href="https://github.com/IsaacIsOkay/learnerWorkspace">Github</a></p>
 </div>
 <hr>   
 <body>
@@ -147,10 +149,10 @@
 	different from what image net contains because most of the more primative feature maps 
 	will train simillaryly with your data.
 	<br>
-	To do this in keras there are tools for commonly used pretrained convolution networks (such 		as the VGG network, Alex Net, googleNet, ect.) They can be loaded with the applications
-	module in keras for the VGG network an example of loading this without the regression head 		would be using the following code:
-		<center style="font-family:courier;">model = applications.VGG16(include_top=False, weights='imagenet')</center>
-	If you want to load in weights for your own network you can also do this. After 	   		training your own data, and saving it as an h5py file you rebuild the network with the 		sequential model with the number of layers you want to load from your originally trained 		network. Then you can set the weights for this model with the load_weights function 
+	To do this in keras there are tools for commonly used pretrained convolution networks (such as the VGG network, Alex Net, googleNet, ect.) They can be loaded with the applications
+	module in keras for the VGG network an example of loading this without the regression head would be using the following code:
+	<center style="font-family:courier;">model = applications.VGG16(include_top=False, weights='imagenet')</center>
+	If you want to load in weights for your own network you can also do this. After training your own data, and saving it as an h5py file you rebuild the network with the sequential model with the number 	of layers you want to load from your originally trained network. Then you can set the weights for this model with the load_weights function
 		<center style="font-family:courier;">model.load_weights(weights_path, by_name=True)</center>
      </p>
 </div>
