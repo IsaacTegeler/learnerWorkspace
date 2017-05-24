@@ -1,7 +1,5 @@
 # learnerWorkspace
-<Doctype! html>
 <html style="font-family:arial; color:#404040; line-height: 1.8;">
-<Title> Using Keras </Title>
 
 <div  style="width:800px;">
 <H1><center>Keras and Machine Learing</center></H1>
