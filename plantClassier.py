@@ -61,4 +61,7 @@ model.summary()
 #------------------------------------------------
 #post building-----------------------------------
 #data pull---------------------------------------
+train_generator = train_datagen.flow_from_directory('data/trainingData', 
+						target_size=(img_width,img_height),
+					 	batch_size=batch_size)
 #training----------------------------------------
