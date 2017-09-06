@@ -4,6 +4,7 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 from keras import backend as K
 from keras.callbacks import LearningRateScheduler
 from keras.callbacks import Callback as c
+
 K.set_image_dim_ordering('th')
 
 '''
@@ -29,18 +30,18 @@ model.add(ZeroPadding2D((1, 1) , batch_input_shape=(batch_size, 3, img_width, im
 #---------------------Network Architecture--------------------------------------------------------
 
 #Convolution layers -------------
-model.add(Convolution2D(32, 3, 3, activation = 'relu', name = 'con_1'))
+model.add(Convolution2D(32, (3, 3), activation = 'relu', name = 'con_1'))
 model.add(MaxPooling2D((2,2), strides=(2,2)))
 model.add(ZeroPadding2D((1, 1)))
-model.add(Convolution2D(32, 3, 3, activation = 'relu', name = 'con_2'))
+model.add(Convolution2D(32, (3, 3), activation = 'relu', name = 'con_2'))
 model.add(MaxPooling2D((2,2), strides=(2,2)))
 model.add(ZeroPadding2D((1, 1)))
 
 
-model.add(Convolution2D(64, 3, 3, activation = 'relu', name = 'con_3'))
+model.add(Convolution2D(64, (3, 3), activation = 'relu', name = 'con_3'))
 model.add(MaxPooling2D((2,2), strides=(2,2)))
 model.add(ZeroPadding2D((1, 1)))
-model.add(Convolution2D(64, 3, 3, activation = 'relu', name = 'con_4'))
+model.add(Convolution2D(64, (3, 3), activation = 'relu', name = 'con_4'))
 model.add(MaxPooling2D((2,2), strides=(2,2)))
 model.add(ZeroPadding2D((1, 1)))
 
@@ -51,7 +52,7 @@ model.add(Dense(64, activation = 'relu'))
 model.add(Dropout(0.5))
 model.add(Dense(2, activation = 'sigmoid', name='dense_3'))
 
-model.summary()
+#model.summary()
 #compile network
 model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
@@ -81,6 +82,6 @@ def scheduler(epoch):
 change_lr = LearningRateScheduler(scheduler)
 '''
 #this trains the net
-model.fit_generator(train_generator, samples_per_epoch = 12000, nb_epoch=25, validation_data=validation_generator, verbose=1, nb_val_samples=300)
+model.fit_generator(train_generator, steps_per_epoch = (12000/batch_size), epochs=25, validation_data=validation_generator, verbose=1, validation_steps=3)
 
 model.save_weights('trained_net_2.h5')
