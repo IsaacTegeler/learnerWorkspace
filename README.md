@@ -74,7 +74,7 @@
     <p style="text-indent:2.0em;">
         The way that I was able to pull in my data was through the use of the data generator
         and the fit generator provided in keras. To use this you must
-	Split you different images into seperate directories bassed on their classes. Then you can load in you data with the image generator. This uses the 
+	Split your different images into seperate directories bassed on their classes. Then you can load in your data with the image generator. This uses the 
 	<span style="font-family:courier;"> flow_from_directory</span> from the preprocessing module. The dogs and cats
 	classifier also shows the basics of how to use this functionality (line 59-66 in the code).
         However there are otherways to pull in image data using the Image handelers provided by keras.
