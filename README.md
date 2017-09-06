@@ -14,6 +14,8 @@
 <center><a href="http://cnnlocalization.csail.mit.edu/Zhou_Learning_Deep_Features_CVPR_2016_paper.pdf" target="_blank">Deep Features for Discriminative Localization</a></center>
 </p>
 <p>E-mail: isaac.tegeler@gmail.com    <a href="https://github.com/IsaacIsOkay/learnerWorkspace">Github</a></p>
+<br>
+	<h4>Note that the Keras library has been updated since this code was written, only modelPredictions.py and dogsAndCats.py have been updated for the current API the others will need to be fixed to match the updated library if you want to use them.</h4>
 </div>
 <hr>   
 <body>
